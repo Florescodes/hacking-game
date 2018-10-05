@@ -1,0 +1,47 @@
+This is the final code for the website. Copy and past or create new files
+
+
+<!DOCTYPE html> 
+<html lang="en-us">
+
+<!-- Put your include files here -->
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+<!--<script type="text/javascript" src="scripts/main.js"></script>-->
+<script>
+	function Redirect() {
+		//Get the age from the html input
+		var age = document.getElementById("age").value;
+		
+		//Starting the If/Else Statement to access the website
+		if (age >= 16) { 
+			window.location.href = "yes.html"; <!-- CHANGE THESE LINKS -->
+		}
+		else { 
+			window.location.href = "no.html"; <!-- CHANGE THESE LINKS -->
+		}			
+	}
+</script>
+	
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome</title>
+	<link rel="shortcut icon" href="E:\Create PT - Website Final Product\Main Page Icon.ico" />
+</head>
+
+<body>	
+	
+	<div class="Front">
+		<h1><strong>Welcome</strong></h1>
+	</div>
+
+	<div class="Wrapper">
+		<strong>Name:</strong> <br><input type="text" name="FirstName" value="" id="name"><br>
+		<strong>Age:</strong> <br><input type="text" name="Age" value="" id="age"><br>
+		<br>
+		<button onclick="Redirect()">Continue</button>
+	</div>
+
+	
+</body>
+
+</html>

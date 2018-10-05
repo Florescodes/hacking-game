@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html lang="en-us">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hack</title>
+	<link rel="shortcut icon" href="E:\Create PT - Website Final Product\Main Page Icon.ico" />
+	
+</head>
+
+<body>
+
+	<h1>Money: $<span id="cash">0</span> <br> <button onclick="hack(10)">Begin Hack</button></h1>
+		<h1>Hacker Earnings</h1>
+		
+	<div class="Beginner">	
+		<p>Hackers: <span id="starter">0</span> <br>
+
+		<button onclick="buy()">Buy Beginner</button> <br> <p>Cost: $<span id="Cost">10<span></p>
+			<p>First beginner cost $10, after the first purchase the price goes up!</p>
+	</div>
+	
+	<div class="Expert">
+		<p>Hackers: <span id="expert">0</span> </br>
+	
+		<button onclick="buyExpert()">Buy Expert</button> <br> <p>Cost: $<span id="expertCost">200<span></p>
+			<p>First five expert's cost $200, after the first purchase the price goes up for 5 more expert's!</p>
+	
+	</div>
+		<script>
+		
+		var cash = 500;
+	
+		function hack(number) {
+			cash = cash + number;
+			document.getElementById("cash").innerHTML = cash;
+		};
+	
+		var starter = 0;
+		
+		function buy() {
+			var Cost = Math.floor(10 * Math.pow(1.2,starter));
+				if (cash >= Cost) {
+					starter = starter + 1;
+					cash = cash - Cost;
+					document.getElementById('starter').innerHTML = starter;
+					document.getElementById('cash').innerHTML = cash;
+				}
+				
+			var nextCost = Math.floor(10 * Math.pow(1.2,starter));
+			document.getElementById('Cost').innerHTML = nextCost;
+		};
+	
+		window.setInterval(function() {
+			hack(starter);			
+		}, 150);
+	
+		var expert = 0;
+		
+		function buyExpert() {
+			var expertCost = Math.floor(200 * Math.pow(1.3,expert));
+				if (cash >= expertCost) {
+					expert = expert + 5;
+					cash = cash - expertCost;
+					document.getElementById('expert').innerHTML = expert;
+					document.getElementById('cash').innerHTML = cash;
+				}
+			
+			var nextcost = Math.floor(200 * Math.pow(1.3,expert));
+			document.getElementById('expertCost').innerHTML = nextcost;
+		} 
+		
+		window.setInterval(function() {
+		hack(expert);
+		}, 25);
+	
+		</script>
+		
+	<div id="Home">
+		<button><a href="index.html" type="button"><span>Home</span><a/></button>
+	</div>
+		
+</body>
+
+</html>

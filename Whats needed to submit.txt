@@ -1,0 +1,7 @@
+What's needed
+
+1) Video (Done)
+
+2) Written response(Abstraction needed)
+
+3) PDF of all code - label sections of code by name or by what it represents(Done)
